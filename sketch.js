@@ -18,7 +18,7 @@ function setup() {
 
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
-	packageSprite.scale=0.2
+	packageSprite.scale=0.1;
 
 	helicopterSprite=createSprite(width/2, 200, 10,10);
 	helicopterSprite.addImage(helicopterIMG)
@@ -31,7 +31,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.5, isStatic:true});
+	packageBody = Bodies.circle(width/2 , 200 , 9 , {restitution:0.5, isStatic:true});
 	World.add(world, packageBody);
 	
 
@@ -39,9 +39,11 @@ function setup() {
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
  	World.add(world, ground);
 
-	 red1=new Rect(400,400,200,20, );
-	 red2=new Rect(310,350,20,100, );
-	 red3=new Rect(490,350,20,100, );
+	 options={isStatic:true,
+	'friction':2}
+	 red1=new Rect(400,640,200,20,options);
+	 red2=new Rect(310,590,20,100,options );
+	 red3=new Rect(490,590,20,100,options );
 	
   
  }
